@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->  
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->  
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->  
+<head>
+    <title>Intermediate Class</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">    
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,300italic,400italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'> 
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
+    <!-- Plugins CSS -->    
+    <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="assets/plugins/prism/prism.css">
+    <!-- Theme CSS -->  
+    <link id="theme-style" rel="stylesheet" href="assets/css/styles.css">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+      .box-hov{background-color:black;width:100px;height:100px;margin:0 auto;}
+      .box-hov:hover{background-color:pink;}
+      #dogs li:nth-of-type(3)::before {content:"Bad ";color:red; }
+      #dogs li:nth-of-type(3)::after {content:" !";}
+      #bro {
+          width: 100px;
+          height: 100px;
+          background-color: red;
+          position: relative; 
+
+          /* Chrome, Safari, Opera */
+          -webkit-animation-name: example;
+          -webkit-animation-duration: 5s;
+          -webkit-animation-timing-function: linear;
+          -webkit-animation-delay: 2s;
+          -webkit-animation-iteration-count: infinite;
+          -webkit-animation-direction: alternate;
+
+          /* Standard syntax */
+          animation-name: example;
+          animation-duration: 5s;
+          animation-timing-function: linear;
+          animation-delay: 2s;
+          animation-iteration-count: infinite;
+          animation-direction: alternate;
+      }
+
+      /* Chrome, Safari, Opera */
+      @-webkit-keyframes example {
+          0%   {background-color:red;    left:0px;  top:0px;}
+          25%  {background-color:yellow; left:85%;  top:0px;}
+          50%  {background-color:blue;   left:85%;  top:200px;}
+          75%  {background-color:green;  left:0px;  top:200px;}
+          100% {background-color:red;    left:0px;  top:0px;}
+      }
+
+      /* Standard syntax */
+      @keyframes example {
+          0%   {background-color:red;    left:0px;  top:0px;}
+          25%  {background-color:yellow; left:85%;  top:0px;}
+          50%  {background-color:blue;   left:85%;  top:200px;}
+          75%  {background-color:green;  left:0px;  top:200px;}
+          100% {background-color:red;    left:0px;  top:0px;}
+      }
+
+
+
+      @media screen and (max-width: 600px) {
+        header {
+            background-color: #343434 !important;
+        }
+      }
+    </style>
+</head> 
+
+<body data-spy="scroll">
+    
+    <!---//Facebook button code-->
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+    
+    <!-- ******HEADER****** --> 
+    <header id="header" class="header">  
+        <div class="container">            
+            <h1 class="logo pull-left">
+                <a class="scrollto" href="#promo">
+                    <span class="logo-title">HTML/CSS</span>
+                </a>
+            </h1><!--//logo-->              
+            <nav id="main-nav" class="main-nav navbar-right" role="navigation">
+                <div class="navbar-header">
+                    <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button><!--//nav-toggle-->
+                </div><!--//navbar-header-->            
+                <div class="navbar-collapse collapse" id="navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active nav-item sr-only"><a class="scrollto" href="#promo">Home</a></li>
+                        <li class="nav-item"><a class="scrollto" href="#review">Review</a></li>
+                        <li class="nav-item"><a class="scrollto" href="#positioning">Positioning</a></li>                        
+                        <li class="nav-item"><a class="scrollto" href="#morecss">More CSS</a></li> 
+                        <li class="nav-item"><a class="scrollto" href="#animation">Animations</a></li> 
+                        <li class="nav-item last"><a class="scrollto" href="#contact">Contact</a></li>
+                    </ul><!--//nav-->
+                </div><!--//navabr-collapse-->
+            </nav><!--//main-nav-->
+        </div>
+    </header><!--//header-->
+    
+    <!-- ******PROMO****** -->
+    <section id="promo" class="promo section offset-header">
+        <div class="container text-center">
+            <h2 class="title">html<span class="highlight">CSS</span></h2>
+            <p class="intro">A guide to intermediate topics</p>
+            <div class="btns">
+                <a class="btn btn-cta-secondary" href="http://nyc.us9.list-manage.com/subscribe?u=8714225429a6cd1fa0eeaea0e&id=13632064ea" target="_blank">Subscribe</a>
+                <a class="btn btn-cta-primary" href="https://www.facebook.com/lettherebecode" target="_blank">Facebook</a>
+            </div>
+            <ul class="meta list-inline">
+                <!--<li><a href="#" target="_blank">View on GitHub</a></li>
+                <li><a href="https://github.com/twbs/bootstrap" target="_blank">Full Documentation</a></li>-->
+                <li>Created by: <a href="https://github.com/alaingoldman" target="_blank">Alain Goldman</a></li>
+            </ul><!--//meta-->
+        </div><!--//container-->
+        <div class="social-media">
+            <div class="social-media-inner container text-center">
+            </div>
+        </div>
+    </section><!--//promo-->
+    
+    <!-- ******REVIEW****** --> 
+    <section id="review" class="docs section">
+        <div class="container">
+            <div class="docs-inner">
+            <h2 class="title text-center">Review</h2>            
+            <div class="block">
+                <h3 class="sub-title text-center">HTML Tags</h3>
+                <p>HTML stands for Hyper Text Markup Language. It's the language of web browsers. HTML is composed of a series of tags. Each tag is a keyword inside of an angle brace. This tag is also known as a start tag. <br><br>Most tags need a closing tag as well. Which is the same as the start tag with a forward slash infront of the keyword. If you are interested you can see <a target="blank" href="http://www.w3schools.com/tags/"> an expansive list of HTML tags here.</a></p>
+
+
+                <div class="code-block">
+                    <!--//Use Prismjs - http://prismjs.com/index.html#basic-usage -->
+                    <pre><code class="language-markup">
+    &ltp class="my-style"&gt
+      Hello World!
+    &lt/p&gt
+                     </code></pre>
+                </div><!--//code-block-->
+                <p>As you can see in this HTML code. We are using the p tag with "Hello World!" inside of it. Everything from the start tag to the closing tag is considered a HTML <b>element</b>.
+                </p>
+                <p>
+                You can also have an <b>attribute</b>, which adds information to the HTML element. Attributes are only defined in the start tag. They are set in name/value pairs. For example <b>name="value".</b> In the above example the p tag has a class attribute set to the value of "my-style" .
+                </p>
+                <p>The most popular attributes are class and id. You can set values for the class or id attribute as whatever you want but your HTML should only contain one type of that id. Where you can have multiple classes of that type on the page.
+                <h3 class="sub-title text-center">HTML Structure</h3>
+                <br>
+                <p>All HTML files should contain this structure.</p>
+                <pre><code class="language-markup">
+   &lt!DOCTYPE html&gt
+   &lthtml&gt
+     &lthead&gt
+       &lttitle&gt My First Page &lt/title&gt
+     &lt/head&gt
+     &ltbody&gt
+       I hope you like it.
+     &lt/body&gt
+   &lt/html&gt
+                     </code></pre>
+                </div><!--//code-block-->
+                <p>Each HTML file should contain these:</p>
+                <ul>
+                  <li><b>Doctype :</b> Tells the browser which verison of HTML to use.</li>
+                  <li><b>HTML :</b> The HTML tag denotes the start and end of the webpage.</li>
+                  <li><b>Head :</b> The head tag contains site information; styles, scripts and meta info.</li>
+                  <li><b>Body :</b> Contains the body of the document and is displayed in the browser. </li>
+                </ul>
+                <br>
+                <h3 class="sub-title text-center">Links & Images</h3>
+                <div class="code-block">
+                    <pre><code class="language-markup">
+    &ltimg src="logo.png" width="40"&gt
+    &lta href="index.html"&gt
+      Click Here
+    &lt/a&gt
+                     </code></pre>
+                </div><!--//code-block-->
+                <p>The img tag is how to add images to your site. This tag does not need a closing tag. The src attribute points to the location of the image. This can be a local image or it could be a link to an image file online.</p>
+                <p>The img tag can be supplied a width or height attribute and this will shape the image to your restrictions in pixels. Note that if you supply only one of the size attributes the images ratio will not be destroyed. However, if you add both size attributes the image ratio maybe destoryed.</p>
+                <br>
+                <p>
+                If you want to create a link to another page, be it on your site or another site, you need to use the a tag. Which is also called the anchor tag. Use the href attribute to denote the target file. The content inside of the a tag will be represented as a link. It could be text, image or even any number of HTML elements.
+                </p>
+<!--                 <ul class="list-unstyled">
+                    <li><strong>Compression level:</strong> Minified</li>
+                    <li><strong>Theme:</strong> Okaidia</li>
+                    <li><strong>Languages:</strong> Markup, CSS, C-like, JavaScript, PHP and Python</li>
+                </ul> -->
+
+            
+            
+            <div class="block">
+                <h3 class="sub-title text-center">CSS</h3>
+                <p>CSS stands for Cascasding Style Sheets. Which defines how HTML elements are displayed. There are 3 ways to include CSS in your HTML document.</p>
+                <br>
+                <strong>Inline CSS</strong>
+                <br>
+                <pre><code class="language-markup">
+    &ltp style="color:red;"&gt red text &lt/p&gt
+                </code></pre>
+                <strong>Style tag</strong>
+                <br>
+                <pre><code class="language-markup">
+    &lthead&gt
+      &ltstyle&gt
+        /* CSS Here */
+      &lt/style&gt
+    &lt/head&gt
+                </code></pre>
+                <strong>Link to a CSS file</strong>
+                <br>
+                <pre><code class="language-markup">
+    &lthead&gt
+      &ltlink rel="stylesheet" type="text/css" href="style.css"&gt
+    &lt/head&gt
+                </code></pre>
+                </div><!--//code-block-->
+                <h3 class="sub-title text-center">Targeting with Selectors</h3><br>
+                <pre><code class="language-css">
+    selector {
+        property:value;
+    }
+                </code></pre>
+                <div class="code-block">
+
+                <p>In CSS you use a <b>selector</b> to target the elements you want to apply styles to. One way you can select and element is by looking for it's id or class attribute. If you want to select an element with the id value of content and another with the class value of wrap you would write this : </p>
+                    <pre>
+
+                    <code class="language-css">
+    #content {
+      font-family: 'Lato', arial, sans-serif;
+      font-size: 16px;
+    }
+    .wrap {
+      margin: 0 auto;
+    }
+                    </code></pre>
+                </div><!--//code-block-->
+                <p> Here is a list of some other ways to target elements.</p>
+            <div class="block">
+                <br>
+                <strong>Select all elements on the page with *</strong>
+                <br>
+                <pre><code class="language-css">
+    *{margin:0;padding:0;}
+                </code></pre>
+                <strong>Select based on the type of tag.</strong>
+                <br>
+                <pre><code class="language-css">
+    a {text-decoration:none;}
+    body {background-color:red;}
+                </code></pre>
+                <strong>Select descendents.</strong>
+                <br>
+                <pre><code class="language-css">
+    li a{
+      text-decoration:none;
+    }
+                </code></pre>
+                <strong>You can join multiple selectors with a comma. <br>(Yes, that is a comma between .top and .bottom.)</strong>
+                <pre><code class="language-css">
+    .top ,.bottom{
+      margin:10px;
+    }
+                </code></pre>
+                <p> For a more expanisve list of CSS selectors <a target="blank" href="http://code.tutsplus.com/tutorials/the-30-css-selectors-you-must-memorize--net-16048" >you can check out this link</a> </p>
+                </div><!--//code-block-->
+                <h3 class="sub-title text-center">Comment Out Code</h3>
+                <br>
+                <div class="block">
+                <strong> Comments in HTML </strong>
+                    <pre><code class="language-markup">
+    &lta href="http://google.com"&gt Google it  &lt/a&gt
+    &lt!-- &lta href="http://bing.com"&gt Bing it &lt/a&gt --&gt
+
+                    </code></pre>
+                <strong> Comments in CSS </strong>
+                    <pre><code class="language-css">
+    body{display:block;}
+    /*body{display:none !important;}*/
+    *{
+      margin:0;
+      /*margin:100px;*/
+    }
+                    </code></pre>
+                </div>
+                <h3 class="sub-title text-center">Media Queries</h3>
+                <pre><code class="language-css">
+    @media screen and (max-width: 700px) {
+        header {
+            background-color: #343434;
+        }
+    }
+                </code></pre>
+                <p>The <strong>@media</strong> rule is used to define different style rules for different media types/devices. This can check things like width, height, resolution and orientation. Here I set that if the width of the browser is anything under 700 pixels change the <strong>background-color:</strong> of the header to #343434;.</p>
+            </div><!--//block-->
+            </div> 
+            </div><!--//docs-inner-->         
+        </div><!--//container-->
+    </section><!--//features-->
+    
+    <section id="positioning" class="license section">
+        <div class="container">
+            <div class="license-inner">
+            <h2 class="title text-center">Positioning</h2>
+                <div class="info">
+                    <h3 class="sub-title text-center">Block vs Inline</h3>
+                    <br>
+                    <p>A <strong>block</strong> element is an element that takes up the full width available, and has a line break before and after it.</p>
+                    <strong>Examples of block elements:</strong>
+                    <ul>
+                        <li>&lth1&gt</li>
+                        <li>&ltp&gt</li>
+                        <li>&ltli&gt</li>
+                        <li>&ltdiv&gt</li>
+                    </ul>
+                    <br>
+                    <p>An <strong>inline</strong> element only takes up as much width as necessary, and does not force line breaks.</p>
+                    <strong>Examples of inline elements:</strong>
+                    <ul>
+                        <li>&ltspan&gt</li>
+                        <li>&lta&gt</li>
+                    </ul>
+                    <p>Alternatively there is also an <strong>inline-block </strong> display. Meaning this element is displayed as a block but is formatted as an inline element.</p>
+                    <h3 class="sub-title text-center">Horizontal Centering (block elements)</h3>
+                    <p>If you want to center a block element on a page horizontally you can do it one of two ways. Either with margin or absolute positioning. </p>
+                    <strong> Margin </strong>
+                    <pre><code class="language-markup">
+    &ltdiv class="box"&gt&lt/div&gt
+                    </code></pre>
+                    <pre><code class="language-css">
+    .box{
+      height:100px;
+      width:100px;
+      background-color:blue;
+
+      margin-left:auto;
+      margin-right:auto;
+      /*margin:0 auto;*/
+      /*margin:0 auto 0 auto */
+    }
+                    </code></pre> 
+                    <div style="height:100px;width:100px;background-color:#17baef;margin:30px auto;"></div>  
+                    <p>This specifies that the element should split the available margin equally. There are other shorthand ways of setting the margin-left and margin-right. Both of which I commented out in the CSS above.</p> 
+                    <br>  
+                    <strong> Absolute Positioning </strong> 
+                    <pre><code class="language-markup">
+    &ltdiv class="box"&gt&lt/div&gt
+                    </code></pre>
+                    <pre><code class="language-css">
+    .box{
+      height:100px;
+      width:100px;
+      background-color:blue;
+
+      position:absolute;
+      left:50%;
+      transform:translateX(-50%);
+      -moz-transform:translateX(-50%);
+      -webkit-transform:translateX(-50%);
+    }
+                    </code></pre>
+
+                    <div style="height:100px;width:100px;background-color:#17baef;position:absolute;transform:translateX(-50%);-webkit-transform:translateX(-50%);-moz-transform:translateX(-50%);left:50%;margin:30px 0 30px 0;"></div>     
+                    <br><br><br><br><br><br><br><br>
+                    <p>After applying position : absolute ; you can use left , right , bottom and top to move the div around accordingly. On a couple of CSS properties you will see "-moz-" or "-webkit", these prefixes will just make sure the change happens on firefox and chrome browsers respectively. The transform property was added in CSS3 and only works in newer browsers. If you want to support older browsers you will have to do this another way.</p>
+                    <pre><code class="language-css">
+    .box{
+      height:100px;
+      width:100px;
+      background-color:blue;
+
+      position:absolute;
+      left:50%;
+      margin-left:-50px;
+    }
+                    </code></pre>
+                    <br>
+
+
+                    <p> What I want you to notice is that in order to center this div with absolute positioning perfectly, <strong>you need to know the width of the element.</strong>  I set the margin-left equal to minus half the width of the div in order to shift it over because absolute positioning will start the div at exactly half the size of the container without taking into account the size of the element itself. <br> <b>So, if you do not know the width of the element you want to center this is not a good option.</b> </p>
+                    <p>Another issue with aboslute positioning is that the div doesn't follow the same flow of the page and because of that it does not take up space the same way other elements do. This in turn will cause overlapping of elements. In order to show this example in this website itself I had to add a series of break tags after the div to forcefully give a space that the div would land on.</p>
+                    <strong>Cons</strong>
+                    <ul>
+                        <li>Width has to be known.</li>
+                        <li>Element doesn't follow flow of the page.</li>
+                    </ul>
+                    <p>With all this being said you should only use absolute positioning in extreme cases.</p>
+                    <br>
+                    <h3 class="sub-title text-center">Horizontally Centering (inline elements)</h3>
+                    <br>
+                    <pre><code class="language-markup">
+    &ltdiv&gt
+      &ltspan&gttest span&lt/span&gt
+    &lt/div&gt
+                    </code></pre>
+                    <pre><code class="language-css">
+    div{text-align:center;}
+                    </code></pre>
+                    <br>
+<div style="text-align:center;"><span>test span</span></div>
+<br><p>Easily enough all you have to do to center a single inline element is to put <strong>text-align: center ;</strong> on the containing element.</p>
+<br><p><strong>Vertical alignment</strong> is a bit out of the scope of this tutorial but if you want to read up on it <a target="blank" href="https://css-tricks.com/centering-css-complete-guide/">you can do so here.</a> </p>
+<h3 class="sub-title text-center">Fixed Elements</h3>
+<p>Earlier we briefly touched absolute positioned elements. This is when the element is positioned relative to its first positioned (not static) ancestor element. This element then does not follow the flow of the webpage. This is an interesting contrast to position : fixed ; where the element is positioned relative to the browser window. An example of this is the nagivatgion panel on this website. No matter how far the user scrolls down the navigation panel is still there.</p>
+<p> Here is an example of how you could create a fixed element that covers the whole page. </p>
+
+                    <pre><code class="language-markup">
+    &ltdiv class="annoying-box"&gt&lt/div&gt
+    &ltbutton id="bother"&gtWarning! Show the annoying box&ltbutton&gt 
+                    </code></pre>
+                    <pre><code class="language-css">
+    .annoying-box{
+      height: 100%;
+      width: 100%;
+      background-color: orange;
+
+      position: fixed;
+      left: 0;
+      top: 0;
+
+      display:none; /* hides it */
+  }
+                    </code></pre>
+                    <pre><code class="language-javascript">
+    $('#bother').click(function() {
+      $('.annoying-box').show();
+    });
+    $('.annoying-box').click(function() {
+      $('.annoying-box').hide();
+    });
+                    </code></pre>
+                    <br>
+
+<button type="button" id="bother" class="btn btn-danger btn-lg btn-block" style="padding: 20px 0;">Warning! Show the annoying box</button>
+<br><br>
+<p>I provided the jQuery on how I show / hide this element if you're interested.<p>
+
+<div class="annoying-box" title="Click to hide" style="z-index:999;height: 100%;left: 0;width: 100%;top: 0;background-color: orange;position: fixed;display:none;cursor:pointer;"></div>
+<br>
+<h3 class="sub-title text-center">Float</h3>
+<p> Floating elements is a seemingly simple concept but it is one of the most confusing things in front end development. When you float an element it becomes a block box. This box can then be shifted to the left or right on the current line.</p>
+
+                    <pre><code class="language-markup">
+    &ltdiv class="red"&gt&lt/div&gt
+    &ltdiv class="blue"&gt&lt/div&gt
+                    </code></pre>
+                    <pre><code class="language-css">
+     div{ height:100px; width:100px; }
+    .red{
+      background-color:red
+      float:right;
+    }
+    .blue{
+      background-color:blue
+      float:left;
+     }
+                    </code></pre><br>
+                    <div style="height:100px; width:100px;background-color:#d9534f;float:right;"></div>
+                    <div style="height:100px; width:100px;background-color:#17baef;float:left;"></div>
+                    <br><br><br><br><br><br>
+                    <p> What I want you to notice is that I make the red div first and the blue div second but the positions are switched in the browser because they are floated.</p>
+                    <br>
+                    <h3 class="sub-title text-center">Clearfix - A CSS Hack</h3>
+                    <p>Sometimes in older browsers a floating element may escape it's container. As you can see in the last example both the blue and red div's are contained within the white content wrapper of this website and are working correctly. In older browsers however this would require a hack to get around. We will not be going over this hack in depth but <a href="http://www.cssreset.com/understanding-clearing-floats-css-tutorial/">you can see it here if you ever need to implement it. </a> It's a problem web developers used to have but we shouldn't have as much anymore.</p>
+                </div><!--//info-->
+                <!--<div class="cta-container">
+                    <div class="speech-bubble">                    
+                        <p class="intro">Pastry gummi bears gummies chupa chups jelly-o cake liquorice croissant. Liquorice apple pie candy canes brownie caramels brownie macaroon sesame snaps. </p>
+                        <div class="icon-holder  text-center"><i class="fa fa-smile-o"></i></div>
+                    </div>
+                </div>--><!--//cta-container-->
+            </div><!--//license-inner-->
+        </div><!--//container-->
+    </section><!--//how-->
+    
+        <!-- ******LICENSE****** --> 
+        <section id="morecss" class="license section">
+            <div class="container">
+                <div class="license-inner">
+                <h2 class="title text-center">More CSS</h2>
+                    <div class="info">
+                        <h3 class="sub-title text-center">Cascading</h3>
+                        <br>
+                        <p>There can be a number of styles in a HTML document but by the time it is rendered by your browser all of the stylesheets a cascaded into one. So if one element has two CSS rules, and the rules have the same weight, the latter one wins.</p>
+                        <pre><code class="language-markup">
+        &ltdiv&gt&lt/div&gt
+                        </code></pre>
+                        <pre><code class="language-css">
+        div{
+          height:100px;
+          width:100px;
+          margin:0 auto;
+          background-color:red;
+        }
+        div{
+          background-color:blue;
+        }
+                        </code></pre> 
+                        <div style="height:100px;width:100px;background-color:#17baef;margin:30px auto;"></div>  
+                        <p>There is an order of priority which won't really an issue for us in our examples today. I just want you to know that an order exists. If you want addition resources on that you can <a target="blank" href="http://www.w3.org/TR/2011/REC-CSS2-20110607/cascade.html#cascade">check it out here. </a>  </p>
+                        <p>However, if you want something to override regardless of it's position in the cascase you can use <b> !important </b>. This should only be used in extreme cases. Only because if anther developer adds changes to the same element after you did no matter what your !important wins. Which will cause issues down the line. You write <b>!important</b> before the semicolon.</p> 
+                        <pre><code class="language-markup">
+        &ltdiv&gt&lt/div&gt
+                        </code></pre>
+                        <pre><code class="language-css">
+        div{
+          height:100px;
+          width:100px;
+          margin:0 auto;
+          background-color:red !important;
+        }
+        div{
+          background-color:blue;
+        }
+                        </code></pre> 
+                        <div style="height:100px;width:100px;background-color:red !important;margin:30px auto;background-color:blue;"></div>  
+                        <br>  
+                        <h3 class="sub-title text-center">Psuedo Classes</h3>
+                        <br>
+                        A Pseduo class is used to define a special state of an element. For example when a element is hovered over or when an a tag is visited.
+                        <pre><code class="language-css">
+    selector:pseudo-class {
+        property:value;
+    }
+                        </code></pre>
+                        <p> This is how it works. Here are some examples of a couple of Pseudo classes and how to use them.</p><br>
+                        <strong> : hover </strong>
+                        <pre><code class="language-css">
+    .box {
+        background-color:black;
+        height:100px;
+        width:100px;
+        margin:0 auto;
+    }
+    .box:hover{
+        background-color:pink;
+    }
+                        </code></pre>
+                        <br><br>
+                        <div class="box-hov"></div>
+                        <br><br>
+                        <strong> : nth-of-type(n) </strong> with <strong> :: before </strong> + <strong> :: after</strong>
+                        <pre><code class="language-css">
+    #dogs li:nth-of-type(3)::before {
+        content:"Bad ";
+        color:red;
+    }
+    #dogs li:nth-of-type(3)::after {
+        content:" !";
+    }
+                        </code></pre>
+                        <pre><code class="language-markup">
+    &ltul id="dogs"&gt
+        &ltli&gtDog&lt/li&gt
+        &ltli&gtDog&lt/li&gt
+        &ltli&gtDog&lt/li&gt
+        &ltli&gtDog&lt/li&gt
+    &lt/ul&gt
+                        </code></pre>
+                        <ul id="dogs">
+                            <li>Dog</li>
+                            <li>Dog</li>
+                            <li>Dog</li>
+                            <li>Dog</li>
+                        </ul>
+                        <p>This CSS is a bit complex but it says that target the id dogs. Then target an li element inside of it. Then apply this property change to the 3rd li within the dogs id. Then with <strong>::before</strong> add before the element the content "bad " and make the color of the text red. Then with <strong>::after</strong> add the content of " !".</p>
+                        <p>If you want to see a more expanisive list of pseudo elements <a href="http://www.w3schools.com/css/css_pseudo_elements.asp" target="blank">you can check them out here.</a></p>
+
+                        <h3 class="sub-title text-center">Opacity</h3>
+                        <p>There are two ways to go about doing opacity.</p>
+                        <pre><code class="language-markup">
+    &ltdiv&gt 
+      &lth2&gt
+        I can barely see this
+      &lt/h2&gt
+    &lt/div&gt
+                        </code></pre>
+                        <pre><code class="language-css">
+    div{
+        height:38px;
+        background-color:black;
+        opacity:0.1;
+        text-align:center;
+    }
+                        </code></pre>
+                        <br>
+                        <div style="height:38px;background-color:black;opacity:0.1;text-align:center;"><h2 style="color:black;">I can barely see this</h2></div>(hightlight this div to see the text)<br><br><br>
+                        <p>Setting <strong> opacity: 1; </strong> is 100% so opacity is represented with decimals. Now this works but the opacity of the element effects all the opacity of the children.</p>
+                        <p>To change the opacity of a div and not it's children you would have to do something like this:</p>
+                          <pre><code class="language-markup">
+    &ltdiv&gt 
+      &lth2&gt
+        I can see this
+      &lt/h2&gt
+    &lt/div&gt
+                        </code></pre>
+                        <pre><code class="language-css">
+    div{
+        height:38px;
+        background-color:rgba(0,0,0,0.1);
+        text-align:center;
+    }
+                        </code></pre>
+                        <br>
+                        <div style="height:38px;background-color:rgba(0,0,0,0.1);text-align:center;"><h2 style="color:black;">I can see this</h2></div><br><br><br>
+                        <p> You would do this if you have to lay text over an image <p>
+                            <br>
+                        <h3 class="sub-title text-center">CSS3 generators</h3><br>
+                        <p>There are a lot of beautiful CSS3 effects that require fixes for multiple browsers so a lot of developers just tend to use generators. Try it out here: <a href="http://css3generator.com/" target="blank">http://css3generator.com/</a></p>
+                    </div><!--//info-->
+                    <!--<div class="cta-container">
+                        <div class="speech-bubble">                    
+                            <p class="intro">Pastry gummi bears gummies chupa chups jelly-o cake liquorice croissant. Liquorice apple pie candy canes brownie caramels brownie macaroon sesame snaps. </p>
+                            <div class="icon-holder  text-center"><i class="fa fa-smile-o"></i></div>
+                        </div>
+                    </div>--><!--//cta-container-->
+                </div><!--//license-inner-->
+            </div><!--//container-->
+        </section><!--//how-->
+
+    <section id="animation" class="license section">
+        <div class="container">
+            <div class="license-inner">
+            <h2 class="title text-center">CSS Animations</h2>
+                <div class="info">
+                    <h3 class="sub-title text-center">@Keyframes</h3>
+                    <p> CSS gives the ability to render animations without jQuery or flash. </p>
+                    <pre><code class="language-css">
+div {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  position: relative; 
+
+  /* Chrome, Safari, Opera */
+  -webkit-animation-name: example;
+  -webkit-animation-duration: 5s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-delay: 2s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+
+  /* Standard syntax */
+  animation-name: example;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-delay: 2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes example {
+  0%   {background-color:red;    left:0px;  top:0px;}
+  25%  {background-color:yellow; left:85%;  top:0px;}
+  50%  {background-color:blue;   left:85%;  top:200px;}
+  75%  {background-color:green;  left:0px;  top:200px;}
+  100% {background-color:red;    left:0px;  top:0px;}
+}
+
+/* Standard syntax */
+@keyframes example {
+  0%   {background-color:red;    left:0px;  top:0px;}
+  25%  {background-color:yellow; left:85%;  top:0px;}
+  50%  {background-color:blue;   left:85%;  top:200px;}
+  75%  {background-color:green;  left:0px;  top:200px;}
+  100% {background-color:red;    left:0px;  top:0px;}
+}
+                    </code></pre>
+                    <br><br>
+                    <div id="bro"></div>
+                    <br><br><br><br><br><br><br><br><br><br>
+
+                </div>
+            </div>
+        </div>
+    </section>  
+<!-- <button type="button" id="reset-but" class="btn btn-success" style="position:fixed;bottom:1%;left:1%;z-index:990;">Reset Animations</button> -->
+    <!-- ******CONTACT****** --> 
+    <section id="contact" class="contact section has-pattern">
+        <div class="container">
+            <div class="contact-inner">
+                <h2 class="title  text-center">Contact</h2>
+                <p class="intro  text-center">I hope you find this tutorial useful. <br />Feel free to get in touch if you have any questions or suggestions.</p>
+                <div class="author-message">                      
+                    <div class="profile">
+                        <img class="img-responsive" src="assets/images/alain.jpg" alt="" />
+                    </div><!--//profile-->
+                    <div class="speech-bubble">
+                        <h3 class="sub-title">How do I get the best out of this class?</h3>
+                        <p>Hey, in this class I wanted to brush on all the topics within HTML and CSS that an intermediate front end developer should know of. Therefore a lot of topics were not done the greatest service, simply for the interetst of time. However, In order to reap the benefits of this tutorial you honestly should delve deeper into each nugget of information. Programming in general rewards repeated exposure. Crack open this tutorial later and read up on some of the topics that seem fun. I hope you had a great time with me and I wish you luck on all your future endevours!</p>
+                        <div class="source">
+
+                            <span class="name"><a href="http://google.com" target="_blank">Alain Goldman</a></span>
+                            <br />
+                            <span class="title">Fullstack developer</span>
+                        </div><!--//source-->
+                    </div><!--//speech-bubble-->                        
+                </div><!--//author-message-->
+                <div class="clearfix"></div>
+                <div class="info text-center">
+                    <h4 class="sub-title">Alain@BeginnerProgrammers.nyc</h4>
+                    <h4 style="color:white;margin-top:-27px;"class="sub-title">Email me, I get bored :(</h4>
+                </div><!--//info-->
+            </div><!--//contact-inner-->
+        </div><!--//container-->
+    </section><!--//contact-->  
+      
+    <!-- ******FOOTER****** --> 
+    <footer class="footer">
+        <div class="container text-center">
+            <small class="copyright">Coded with <i class="fa fa-heart"></i> by Alain Goldman</small>
+        </div><!--//container-->
+    </footer><!--//footer-->
+     
+    <!-- Javascript -->          
+    <script type="text/javascript" src="assets/plugins/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/jquery-migrate-1.2.1.min.js"></script>    
+    <script type="text/javascript" src="assets/plugins/jquery.easing.1.3.js"></script>   
+    <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>     
+    <script type="text/javascript" src="assets/plugins/jquery-scrollTo/jquery.scrollTo.min.js"></script> 
+    <script type="text/javascript" src="assets/plugins/prism/prism.js"></script>    
+    <script type="text/javascript" src="assets/js/main.js"></script> 
+    <script>$("#bother").click(function() {
+          $(".annoying-box").show();
+            });
+          $('.annoying-box').click(function() {
+            $('.annoying-box').hide();
+          });
+    </script>      
+</body>
+</html> 
+
+
